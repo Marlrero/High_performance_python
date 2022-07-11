@@ -15,13 +15,13 @@
 >  - $S_{latency}$ = theoretical speed-up of the execution of the whole task
 >  - $s$ = speed-up of the part of the task that benefits from imporved system resources
 >  - $p$ = the propotion of execution time that the part benefiting from improved resources originally occupied   
->  $$
->    S_{latency}(s) \leq \frac{1}{1-p}
->  $$   
->  $$
->    \displaystyle\lim_{s \rarr \infin} S_{latency}(s) = \frac{1}{1-p}
->  $$  
->  p(전체에서 병렬 가능 부분)와 s(병렬화 개수)에 따라 성능 향상 최댓값이 병목으로 작용
+>    $$
+>      S_{latency}(s) \leq \frac{1}{1-p}
+>    $$   
+>    $$
+>      \displaystyle\lim_{s \rarr \infin} S_{latency}(s) = \frac{1}{1-p}
+>    $$  
+>    $p$(전체에서 병렬 가능 부분)와 $s$(병렬화 개수)에 따라 성능 향상 최댓값이 병목으로 작용
 >
 > Example:
 >  1. 100명을 대상으로 각 1분이 소요되는 설문조사 시행 -> 100분 소요
