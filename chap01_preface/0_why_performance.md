@@ -9,30 +9,24 @@
 6. Multi-core Architecture
 
 > Amdahl's Law
->  $$
->    S_{latency}(s) = \frac{1}{(1-p)+ \frac{p}{s}}
->  $$
+>  $$S_{latency}(s) = \frac{1}{(1-p)+ \frac{p}{s}}$$
 >  - $S_{latency}$ = theoretical speed-up of the execution of the whole task
 >  - $s$ = speed-up of the part of the task that benefits from imporved system resources
 >  - $p$ = the propotion of execution time that the part benefiting from improved resources originally occupied   
->    $$
->      S_{latency}(s) \leq \frac{1}{1-p}
->    $$   
->    $$
->      \displaystyle\lim_{s \rarr \infin} S_{latency}(s) = \frac{1}{1-p}
->    $$  
+>    $$S_{latency}(s) \leq \frac{1}{1-p}$$   
+>    $$\displaystyle\lim_{s \rarr \infin} S_{latency}(s) = \frac{1}{1-p}$$  
 >    $p$(전체에서 병렬 가능 부분)와 $s$(병렬화 개수)에 따라 성능 향상 최댓값이 병목으로 작용
 >
 > Example:
 >  1. 100명을 대상으로 각 1분이 소요되는 설문조사 시행 -> 100분 소요
 >  2. 조사원 1명의 경우: $p = \frac{1}{100} = 0.01, s = 1$  
-> $ S_{latency}(s) = \frac{1}{(1-p)+ \frac{p}{s}} = \frac{1}{(1-0.01)+ \frac{0.01}{1}} = \frac{1}{0.99+ {0.01}} = 1 $ -> 기준
+> $S_{latency}(s) = \frac{1}{(1-p)+ \frac{p}{s}} = \frac{1}{(1-0.01)+ \frac{0.01}{1}} = \frac{1}{0.99+ {0.01}} = 1$ -> 기준
 >  3. 조사원 2명의 경우: $p = \frac{50}{100} = 0.5, s = 2$  
-> $ S_{latency}(s) = \frac{1}{(1-p)+ \frac{p}{s}} = \frac{1}{(1-0.5)+ \frac{0.5}{2}} = \frac{1}{0.5+ {0.25}} = 1.3333... $ -> 1.3배 증가 (약 50분 소요)
+> $S_{latency}(s) = \frac{1}{(1-p)+ \frac{p}{s}} = \frac{1}{(1-0.5)+ \frac{0.5}{2}} = \frac{1}{0.5+ {0.25}} = 1.3333...$ -> 1.3배 증가 (약 50분 소요)
 >  4. 조사원 100명의 경우: $p = \frac{100}{100} = 1, s = 100$  
-> $ S_{latency}(s) = \frac{1}{(1-p)+ \frac{p}{s}} = \frac{1}{(1-1)+ \frac{1}{100}} = \frac{1}{0+ {0.01}} = 100 $ -> 100배 증가 (1분이면 끝냄!)
+> $S_{latency}(s) = \frac{1}{(1-p)+ \frac{p}{s}} = \frac{1}{(1-1)+ \frac{1}{100}} = \frac{1}{0+ {0.01}} = 100$ -> 100배 증가 (1분이면 끝냄!)
 >  5. 조사원 200명의 경우:  $p = \frac{200}{100} = 2, s = 200$  
-> $ S_{latency}(s) = \frac{1}{(1-p)+ \frac{p}{s}} = \frac{1}{(1-2)+ \frac{1}{200}} = \frac{1}{-1 + {0.005}} = \frac{1}{-0.995} $ -> 의미가 없음!  
+> $S_{latency}(s) = \frac{1}{(1-p)+ \frac{p}{s}} = \frac{1}{(1-2)+ \frac{1}{200}} = \frac{1}{-1 + {0.005}} = \frac{1}{-0.995}$ -> 의미가 없음!  
 > 설문조사 소요시간을 줄이는 수 밖에 없음!
 >
 > 
