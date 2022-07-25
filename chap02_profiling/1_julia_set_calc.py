@@ -38,7 +38,7 @@ def calc_pure_python(desired_width: int, max_iteration: int):
         max_iteration (int): 최대 반복 횟수
     """
     x_step = (x2 - x1) / desired_width
-    y_step = (y2 - y1) / desired_width
+    y_step = (y1 - y2) / desired_width
     x = []
     y = []
     
